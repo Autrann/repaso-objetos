@@ -1,7 +1,7 @@
 package uaslp.objetos.figuras;
 
 
-public class PoligonoRegular {
+public class PoligonoRegular extends Figura {
 
     private double lados;
     private int numDeLados;
@@ -9,10 +9,15 @@ public class PoligonoRegular {
     private double apotema;
     private double angulo;
 
-    public PoligonoRegular(int numLados){
+    public PoligonoRegular(int numLados) throws NumeroInvalidoDeLados{
+        super("Poligono Regular");
+        if(numDeLados<5){
+            throw new NumeroInvalidoDeLados("Número de lados válido a partir de 5");
+        }
         this.numDeLados = numLados;
     }
     public PoligonoRegular(int numLados, double lados){
+        super("Poligono Regular");
         this.numDeLados = numLados;
         this.lados = lados;
     }
